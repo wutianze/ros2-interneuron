@@ -1,0 +1,15 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from picas_msgs/msg/TestString.msg
+// generated code does not contain a copyright notice
+
+#include "picas_msgs/msg/UTime.idl"
+
+module picas_msgs {
+  module msg {
+    struct TestString {
+      picas_msgs::msg::UTime stamp;
+
+      string data;
+    };
+  };
+};

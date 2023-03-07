@@ -1,0 +1,30 @@
+[35m[1mConsolidate compiler generated dependencies of target example_mt[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/example_mt.dir/src/example_mt.cpp.o[0m
+In file included from [01m[K/home/sauron/ros2-picas/install/rclcpp/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31[m[K,
+                 from [01m[K/home/sauron/ros2-picas/install/rclcpp/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+                 from [01m[K/home/sauron/ros2-picas/install/rclcpp/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+                 from [01m[K/home/sauron/ros2-picas/install/rclcpp/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/home/sauron/ros2-picas/install/rclcpp/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/home/sauron/ros2-picas/install/rclcpp/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/home/sauron/ros2-picas/install/rclcpp/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/home/sauron/ros2-picas/install/rclcpp/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/home/sauron/ros2-picas/install/rclcpp/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/home/sauron/ros2-picas/install/rclcpp/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/sauron/ros2-picas/ros2-picas-example/picas_example_mt/src/example_mt.cpp:16[m[K:
+/home/sauron/ros2-picas/install/rclcpp/include/rclcpp/rclcpp/publisher.hpp: In instantiation of ‘[01m[Kclass rclcpp::Publisher<test_msgs::msg::TestString_<std::allocator<void> > >[m[K’:
+[01m[K/home/sauron/ros2-picas/ros2-picas-example/picas_example_mt/src/example_mt.cpp:59:50:[m[K   required from here
+[01m[K/home/sauron/ros2-picas/install/rclcpp/include/rclcpp/rclcpp/publisher.hpp:81:47:[m[K [01;31m[Kerror: [m[Kstatic assertion failed: given message type is not compatible with ROS and cannot be used with a Publisher
+   81 |     rclcpp::is_ros_compatible_type<MessageT>::[01;31m[Kvalue[m[K,
+      |                                               [01;31m[K^~~~~[m[K
+[01m[K/home/sauron/ros2-picas/install/rclcpp/include/rclcpp/rclcpp/publisher.hpp:81:47:[m[K [01;36m[Knote: [m[K‘[01m[Krclcpp::is_ros_compatible_type<test_msgs::msg::TestString_<std::allocator<void> > >::value[m[K’ evaluates to false
+[01m[K/home/sauron/ros2-picas/ros2-picas-example/picas_example_mt/src/example_mt.cpp:[m[K In member function ‘[01m[Kvoid StartNode::timer_callback()[m[K’:
+[01m[K/home/sauron/ros2-picas/ros2-picas-example/picas_example_mt/src/example_mt.cpp:97:29:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator*[m[K’ (operand type is ‘[01m[Ktest_msgs::msg::TestString_<std::allocator<void> >[m[K’)
+   97 |         publisher_->publish([01;31m[K*message[m[K);
+      |                             [01;31m[K^~~~~~~~[m[K
+[01m[K/home/sauron/ros2-picas/ros2-picas-example/picas_example_mt/src/example_mt.cpp:[m[K In member function ‘[01m[Kvoid IntermediateNode::callback(test_msgs::msg::TestString_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/sauron/ros2-picas/ros2-picas-example/picas_example_mt/src/example_mt.cpp:145:45:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator*[m[K’ (operand type is ‘[01m[Ktest_msgs::msg::TestString_<std::allocator<void> >[m[K’)
+  145 |         if (publisher_) publisher_->publish([01;31m[K*message[m[K);
+      |                                             [01;31m[K^~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/example_mt.dir/build.make:76: CMakeFiles/example_mt.dir/src/example_mt.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/example_mt.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

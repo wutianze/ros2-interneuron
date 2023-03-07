@@ -1,0 +1,201 @@
+[0.329s] DEBUG:colcon:Command line arguments: ['/home/sauron/.local/bin/colcon', 'build', '--allow-overriding', 'rclcpp', 'test_msgs', '--cmake-args', '-DPICAS=TRUE']
+[0.330s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=20, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=['rclcpp', 'test_msgs'], cmake_args=['-DPICAS=TRUE'], cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7fd2afe3e8f0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7fd2b072d1b0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7fd2b072d1b0>>, mixin_verb=('build',))
+[0.365s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.365s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.365s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.365s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.365s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.365s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.365s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/sauron/ros2-picas'
+[0.365s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.365s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.365s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.365s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.365s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.365s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.365s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.365s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.365s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.373s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(rclcpp) by extensions ['ignore', 'ignore_ament_install']
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(rclcpp) by extension 'ignore'
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(rclcpp) by extension 'ignore_ament_install'
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(rclcpp) by extensions ['colcon_pkg']
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(rclcpp) by extension 'colcon_pkg'
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(rclcpp) by extensions ['colcon_meta']
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(rclcpp) by extension 'colcon_meta'
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(rclcpp) by extensions ['ros']
+[0.374s] Level 1:colcon.colcon_core.package_identification:_identify(rclcpp) by extension 'ros'
+[0.376s] DEBUG:colcon.colcon_core.package_identification:Package 'rclcpp' with type 'ros.ament_cmake' and name 'rclcpp'
+[0.376s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example) by extensions ['ignore', 'ignore_ament_install']
+[0.376s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example) by extension 'ignore'
+[0.376s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example) by extension 'ignore_ament_install'
+[0.376s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example) by extensions ['colcon_pkg']
+[0.376s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example) by extension 'colcon_pkg'
+[0.376s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example) by extensions ['colcon_meta']
+[0.376s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example) by extension 'colcon_meta'
+[0.376s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example) by extensions ['ros']
+[0.376s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example) by extension 'ros'
+[0.376s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example) by extensions ['cmake', 'python']
+[0.376s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example) by extension 'cmake'
+[0.376s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example) by extension 'python'
+[0.376s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example) by extensions ['python_setup_py']
+[0.376s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example) by extension 'python_setup_py'
+[0.376s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas-analysis) by extensions ['ignore', 'ignore_ament_install']
+[0.376s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas-analysis) by extension 'ignore'
+[0.376s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas-analysis) by extension 'ignore_ament_install'
+[0.376s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas-analysis) by extensions ['colcon_pkg']
+[0.376s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas-analysis) by extension 'colcon_pkg'
+[0.376s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas-analysis) by extensions ['colcon_meta']
+[0.376s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas-analysis) by extension 'colcon_meta'
+[0.377s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas-analysis) by extensions ['ros']
+[0.377s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas-analysis) by extension 'ros'
+[0.377s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas-analysis) by extensions ['cmake', 'python']
+[0.377s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas-analysis) by extension 'cmake'
+[0.377s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas-analysis) by extension 'python'
+[0.377s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas-analysis) by extensions ['python_setup_py']
+[0.377s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas-analysis) by extension 'python_setup_py'
+[0.377s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas_example) by extensions ['ignore', 'ignore_ament_install']
+[0.377s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas_example) by extension 'ignore'
+[0.377s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas_example) by extension 'ignore_ament_install'
+[0.377s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas_example) by extensions ['colcon_pkg']
+[0.377s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas_example) by extension 'colcon_pkg'
+[0.377s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas_example) by extensions ['colcon_meta']
+[0.377s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas_example) by extension 'colcon_meta'
+[0.377s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas_example) by extensions ['ros']
+[0.377s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas_example) by extension 'ros'
+[0.377s] DEBUG:colcon.colcon_core.package_identification:Package 'ros2-picas-example/picas_example' with type 'ros.ament_cmake' and name 'picas_example'
+[0.377s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas_example_mt) by extensions ['ignore', 'ignore_ament_install']
+[0.377s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas_example_mt) by extension 'ignore'
+[0.377s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas_example_mt) by extension 'ignore_ament_install'
+[0.377s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas_example_mt) by extensions ['colcon_pkg']
+[0.377s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas_example_mt) by extension 'colcon_pkg'
+[0.377s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas_example_mt) by extensions ['colcon_meta']
+[0.377s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas_example_mt) by extension 'colcon_meta'
+[0.377s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas_example_mt) by extensions ['ros']
+[0.377s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/picas_example_mt) by extension 'ros'
+[0.378s] DEBUG:colcon.colcon_core.package_identification:Package 'ros2-picas-example/picas_example_mt' with type 'ros.ament_cmake' and name 'picas_example_mt'
+[0.378s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/test_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.378s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/test_msgs) by extension 'ignore'
+[0.378s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/test_msgs) by extension 'ignore_ament_install'
+[0.378s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/test_msgs) by extensions ['colcon_pkg']
+[0.378s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/test_msgs) by extension 'colcon_pkg'
+[0.378s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/test_msgs) by extensions ['colcon_meta']
+[0.378s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/test_msgs) by extension 'colcon_meta'
+[0.378s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/test_msgs) by extensions ['ros']
+[0.378s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/test_msgs) by extension 'ros'
+[0.378s] DEBUG:colcon.colcon_core.package_identification:Failed to parse potential ROS package manifest in'ros2-picas-example/test_msgs': Error(s) in package 'ros2-picas-example/test_msgs/package.xml':
+The manifest contains invalid XML:
+mismatched tag: line 15, column 43
+[0.378s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/test_msgs) by extensions ['cmake', 'python']
+[0.378s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/test_msgs) by extension 'cmake'
+[0.379s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/test_msgs) by extension 'python'
+[0.379s] DEBUG:colcon.colcon_core.package_identification:Package 'ros2-picas-example/test_msgs' with type 'cmake' and name 'test_msgs'
+[0.379s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/trace_picas) by extensions ['ignore', 'ignore_ament_install']
+[0.379s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/trace_picas) by extension 'ignore'
+[0.379s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/trace_picas) by extension 'ignore_ament_install'
+[0.379s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/trace_picas) by extensions ['colcon_pkg']
+[0.379s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/trace_picas) by extension 'colcon_pkg'
+[0.379s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/trace_picas) by extensions ['colcon_meta']
+[0.379s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/trace_picas) by extension 'colcon_meta'
+[0.379s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/trace_picas) by extensions ['ros']
+[0.379s] Level 1:colcon.colcon_core.package_identification:_identify(ros2-picas-example/trace_picas) by extension 'ros'
+[0.379s] DEBUG:colcon.colcon_core.package_identification:Package 'ros2-picas-example/trace_picas' with type 'ros.ament_cmake' and name 'trace_picas'
+[0.379s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.379s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.379s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.379s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.379s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.402s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.402s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.414s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 343 installed packages in /home/sauron/ros2_humble/install
+[0.415s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.426s] Level 5:colcon.colcon_core.verb:set package 'test_msgs' build argument 'cmake_args' from command line to '['-DPICAS=TRUE']'
+[0.426s] Level 5:colcon.colcon_core.verb:set package 'test_msgs' build argument 'cmake_target' from command line to 'None'
+[0.426s] Level 5:colcon.colcon_core.verb:set package 'test_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.426s] Level 5:colcon.colcon_core.verb:set package 'test_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.426s] Level 5:colcon.colcon_core.verb:set package 'test_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.426s] Level 5:colcon.colcon_core.verb:set package 'test_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.426s] Level 5:colcon.colcon_core.verb:set package 'test_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.426s] Level 5:colcon.colcon_core.verb:set package 'test_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.426s] Level 5:colcon.colcon_core.verb:set package 'test_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.426s] DEBUG:colcon.colcon_core.verb:Building package 'test_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/sauron/ros2-picas/build/test_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': ['-DPICAS=TRUE'], 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/sauron/ros2-picas/install/test_msgs', 'merge_install': False, 'path': '/home/sauron/ros2-picas/ros2-picas-example/test_msgs', 'symlink_install': False, 'test_result_base': None}
+[0.427s] Level 5:colcon.colcon_core.verb:set package 'rclcpp' build argument 'cmake_args' from command line to '['-DPICAS=TRUE']'
+[0.427s] Level 5:colcon.colcon_core.verb:set package 'rclcpp' build argument 'cmake_target' from command line to 'None'
+[0.427s] Level 5:colcon.colcon_core.verb:set package 'rclcpp' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.427s] Level 5:colcon.colcon_core.verb:set package 'rclcpp' build argument 'cmake_clean_cache' from command line to 'False'
+[0.427s] Level 5:colcon.colcon_core.verb:set package 'rclcpp' build argument 'cmake_clean_first' from command line to 'False'
+[0.427s] Level 5:colcon.colcon_core.verb:set package 'rclcpp' build argument 'cmake_force_configure' from command line to 'False'
+[0.427s] Level 5:colcon.colcon_core.verb:set package 'rclcpp' build argument 'ament_cmake_args' from command line to 'None'
+[0.427s] Level 5:colcon.colcon_core.verb:set package 'rclcpp' build argument 'catkin_cmake_args' from command line to 'None'
+[0.427s] Level 5:colcon.colcon_core.verb:set package 'rclcpp' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.427s] DEBUG:colcon.colcon_core.verb:Building package 'rclcpp' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/sauron/ros2-picas/build/rclcpp', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': ['-DPICAS=TRUE'], 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/sauron/ros2-picas/install/rclcpp', 'merge_install': False, 'path': '/home/sauron/ros2-picas/rclcpp', 'symlink_install': False, 'test_result_base': None}
+[0.428s] Level 5:colcon.colcon_core.verb:set package 'trace_picas' build argument 'cmake_args' from command line to '['-DPICAS=TRUE']'
+[0.428s] Level 5:colcon.colcon_core.verb:set package 'trace_picas' build argument 'cmake_target' from command line to 'None'
+[0.428s] Level 5:colcon.colcon_core.verb:set package 'trace_picas' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.428s] Level 5:colcon.colcon_core.verb:set package 'trace_picas' build argument 'cmake_clean_cache' from command line to 'False'
+[0.428s] Level 5:colcon.colcon_core.verb:set package 'trace_picas' build argument 'cmake_clean_first' from command line to 'False'
+[0.428s] Level 5:colcon.colcon_core.verb:set package 'trace_picas' build argument 'cmake_force_configure' from command line to 'False'
+[0.428s] Level 5:colcon.colcon_core.verb:set package 'trace_picas' build argument 'ament_cmake_args' from command line to 'None'
+[0.428s] Level 5:colcon.colcon_core.verb:set package 'trace_picas' build argument 'catkin_cmake_args' from command line to 'None'
+[0.428s] Level 5:colcon.colcon_core.verb:set package 'trace_picas' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.428s] DEBUG:colcon.colcon_core.verb:Building package 'trace_picas' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/sauron/ros2-picas/build/trace_picas', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': ['-DPICAS=TRUE'], 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/sauron/ros2-picas/install/trace_picas', 'merge_install': False, 'path': '/home/sauron/ros2-picas/ros2-picas-example/trace_picas', 'symlink_install': False, 'test_result_base': None}
+[0.429s] Level 5:colcon.colcon_core.verb:set package 'picas_example' build argument 'cmake_args' from command line to '['-DPICAS=TRUE']'
+[0.429s] Level 5:colcon.colcon_core.verb:set package 'picas_example' build argument 'cmake_target' from command line to 'None'
+[0.430s] Level 5:colcon.colcon_core.verb:set package 'picas_example' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.430s] Level 5:colcon.colcon_core.verb:set package 'picas_example' build argument 'cmake_clean_cache' from command line to 'False'
+[0.430s] Level 5:colcon.colcon_core.verb:set package 'picas_example' build argument 'cmake_clean_first' from command line to 'False'
+[0.430s] Level 5:colcon.colcon_core.verb:set package 'picas_example' build argument 'cmake_force_configure' from command line to 'False'
+[0.430s] Level 5:colcon.colcon_core.verb:set package 'picas_example' build argument 'ament_cmake_args' from command line to 'None'
+[0.430s] Level 5:colcon.colcon_core.verb:set package 'picas_example' build argument 'catkin_cmake_args' from command line to 'None'
+[0.430s] Level 5:colcon.colcon_core.verb:set package 'picas_example' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.430s] DEBUG:colcon.colcon_core.verb:Building package 'picas_example' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/sauron/ros2-picas/build/picas_example', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': ['-DPICAS=TRUE'], 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/sauron/ros2-picas/install/picas_example', 'merge_install': False, 'path': '/home/sauron/ros2-picas/ros2-picas-example/picas_example', 'symlink_install': False, 'test_result_base': None}
+[0.431s] Level 5:colcon.colcon_core.verb:set package 'picas_example_mt' build argument 'cmake_args' from command line to '['-DPICAS=TRUE']'
+[0.431s] Level 5:colcon.colcon_core.verb:set package 'picas_example_mt' build argument 'cmake_target' from command line to 'None'
+[0.431s] Level 5:colcon.colcon_core.verb:set package 'picas_example_mt' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.431s] Level 5:colcon.colcon_core.verb:set package 'picas_example_mt' build argument 'cmake_clean_cache' from command line to 'False'
+[0.431s] Level 5:colcon.colcon_core.verb:set package 'picas_example_mt' build argument 'cmake_clean_first' from command line to 'False'
+[0.431s] Level 5:colcon.colcon_core.verb:set package 'picas_example_mt' build argument 'cmake_force_configure' from command line to 'False'
+[0.431s] Level 5:colcon.colcon_core.verb:set package 'picas_example_mt' build argument 'ament_cmake_args' from command line to 'None'
+[0.431s] Level 5:colcon.colcon_core.verb:set package 'picas_example_mt' build argument 'catkin_cmake_args' from command line to 'None'
+[0.431s] Level 5:colcon.colcon_core.verb:set package 'picas_example_mt' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.431s] DEBUG:colcon.colcon_core.verb:Building package 'picas_example_mt' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/sauron/ros2-picas/build/picas_example_mt', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': ['-DPICAS=TRUE'], 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/sauron/ros2-picas/install/picas_example_mt', 'merge_install': False, 'path': '/home/sauron/ros2-picas/ros2-picas-example/picas_example_mt', 'symlink_install': False, 'test_result_base': None}
+[0.432s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.437s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.437s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/sauron/ros2-picas/ros2-picas-example/test_msgs'
+[0.443s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.444s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.444s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.458s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/sauron/ros2-picas/build/test_msgs': /usr/bin/cmake --build /home/sauron/ros2-picas/build/test_msgs -- -j20 -l20
+[1.062s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/sauron/ros2-picas/build/test_msgs' returned '2': /usr/bin/cmake --build /home/sauron/ros2-picas/build/test_msgs -- -j20 -l20
+[1.071s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[1.072s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[1.072s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '2'
+[1.072s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[1.081s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.081s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.081s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[1.094s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[1.096s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/sauron/ros2-picas/install/local_setup.ps1'
+[1.097s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/sauron/ros2-picas/install/_local_setup_util_ps1.py'
+[1.098s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/sauron/ros2-picas/install/setup.ps1'
+[1.103s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/sauron/ros2-picas/install/local_setup.sh'
+[1.103s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/sauron/ros2-picas/install/_local_setup_util_sh.py'
+[1.103s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/sauron/ros2-picas/install/setup.sh'
+[1.108s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/sauron/ros2-picas/install/local_setup.bash'
+[1.109s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/sauron/ros2-picas/install/setup.bash'
+[1.113s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/sauron/ros2-picas/install/local_setup.zsh'
+[1.114s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/sauron/ros2-picas/install/setup.zsh'

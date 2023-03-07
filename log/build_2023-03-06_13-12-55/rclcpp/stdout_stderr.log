@@ -1,0 +1,21 @@
+-- Found ament_cmake_ros: 0.10.0 (/home/sauron/ros2_humble/install/ament_cmake_ros/share/ament_cmake_ros/cmake)
+-- Found ament_index_cpp: 1.4.0 (/home/sauron/ros2_humble/install/ament_index_cpp/share/ament_index_cpp/cmake)
+-- Found builtin_interfaces: 1.2.1 (/home/sauron/ros2_humble/install/builtin_interfaces/share/builtin_interfaces/cmake)
+-- Found rosidl_generator_c: 3.1.4 (/home/sauron/ros2_humble/install/rosidl_generator_c/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.4 (/home/sauron/ros2_humble/install/rosidl_adapter/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.4 (/home/sauron/ros2_humble/install/rosidl_generator_cpp/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_introspection_c;rosidl_typesupport_fastrtps_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_introspection_cpp;rosidl_typesupport_fastrtps_cpp
+-- Found libstatistics_collector: 1.3.1 (/home/sauron/ros2_humble/install/libstatistics_collector/share/libstatistics_collector/cmake)
+-- Found rmw_implementation_cmake: 6.1.1 (/home/sauron/ros2_humble/install/rmw_implementation_cmake/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.2 (/home/sauron/ros2_humble/install/rmw_fastrtps_cpp/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found rosgraph_msgs: 1.2.1 (/home/sauron/ros2_humble/install/rosgraph_msgs/share/rosgraph_msgs/cmake)
+[31mCMake Error at CMakeLists.txt:187 (target_compile_features):
+  target_compile_features The CXX_STANDARD property on target "rclcpp"
+  contained an invalid value: "9".
+
+[0m
+-- Configuring incomplete, errors occurred!
+See also "/home/sauron/ros2-picas/build/rclcpp/CMakeFiles/CMakeOutput.log".
+gmake: *** [Makefile:2225: cmake_check_build_system] Error 1

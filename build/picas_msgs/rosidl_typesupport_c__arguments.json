@@ -1,0 +1,25 @@
+{
+  "package_name": "picas_msgs",
+  "output_dir": "/home/sauron/ros2-picas/build/picas_msgs/rosidl_typesupport_c/picas_msgs",
+  "template_dir": "/home/sauron/ros2_humble/install/rosidl_typesupport_c/share/rosidl_typesupport_c/resource",
+  "idl_tuples": [
+    "/home/sauron/ros2-picas/build/picas_msgs/rosidl_adapter/picas_msgs:msg/TestString.idl",
+    "/home/sauron/ros2-picas/build/picas_msgs/rosidl_adapter/picas_msgs:msg/UTime.idl"
+  ],
+  "ros_interface_dependencies": [
+    "builtin_interfaces:/home/sauron/ros2_humble/install/builtin_interfaces/share/builtin_interfaces/msg/Duration.idl",
+    "builtin_interfaces:/home/sauron/ros2_humble/install/builtin_interfaces/share/builtin_interfaces/msg/Time.idl"
+  ],
+  "target_dependencies": [
+    "/home/sauron/ros2_humble/install/rosidl_typesupport_c/lib/rosidl_typesupport_c/rosidl_typesupport_c",
+    "/home/sauron/ros2_humble/install/rosidl_typesupport_c/local/lib/python3.10/dist-packages/rosidl_typesupport_c/__init__.py",
+    "/home/sauron/ros2_humble/install/rosidl_typesupport_c/share/rosidl_typesupport_c/resource/action__type_support.c.em",
+    "/home/sauron/ros2_humble/install/rosidl_typesupport_c/share/rosidl_typesupport_c/resource/idl__type_support.cpp.em",
+    "/home/sauron/ros2_humble/install/rosidl_typesupport_c/share/rosidl_typesupport_c/resource/msg__type_support.cpp.em",
+    "/home/sauron/ros2_humble/install/rosidl_typesupport_c/share/rosidl_typesupport_c/resource/srv__type_support.cpp.em",
+    "/home/sauron/ros2-picas/build/picas_msgs/rosidl_adapter/picas_msgs/msg/TestString.idl",
+    "/home/sauron/ros2-picas/build/picas_msgs/rosidl_adapter/picas_msgs/msg/UTime.idl",
+    "/home/sauron/ros2_humble/install/builtin_interfaces/share/builtin_interfaces/msg/Duration.idl",
+    "/home/sauron/ros2_humble/install/builtin_interfaces/share/builtin_interfaces/msg/Time.idl"
+  ]
+}

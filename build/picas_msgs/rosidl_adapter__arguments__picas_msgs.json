@@ -1,0 +1,7 @@
+{
+  "package_name": "picas_msgs",
+  "non_idl_tuples": [
+    "/home/sauron/ros2-picas/ros2-picas-example/picas_msgs:msg/TestString.msg",
+    "/home/sauron/ros2-picas/ros2-picas-example/picas_msgs:msg/UTime.msg"
+  ]
+}

@@ -1,0 +1,14 @@
+[01m[K/home/sauron/ros2-picas/ros2-picas-example/picas_example/src/example.cpp:18:10:[m[K [01;31m[Kfatal error: [m[Ktest_msgs/msg/detail/test_string__struct.hpp: No such file or directory
+   18 | #include [01;31m[K"test_msgs/msg/detail/test_string__struct.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+[01m[K/home/sauron/ros2-picas/ros2-picas-example/picas_example/src/case_study.cpp:18:10:[m[K [01;31m[Kfatal error: [m[Ktest_msgs/msg/detail/test_string__struct.hpp: No such file or directory
+   18 | #include [01;31m[K"test_msgs/msg/detail/test_string__struct.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/case_study.dir/build.make:76: CMakeFiles/case_study.dir/src/case_study.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/example.dir/build.make:76: CMakeFiles/example.dir/src/example.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/case_study.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/example.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

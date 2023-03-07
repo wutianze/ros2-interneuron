@@ -1,0 +1,6 @@
+[31mCMake Error at CMakeLists.txt:187 (target_compile_features):
+  target_compile_features The CXX_STANDARD property on target "rclcpp"
+  contained an invalid value: "9".
+
+[0m
+gmake: *** [Makefile:2225: cmake_check_build_system] Error 1
