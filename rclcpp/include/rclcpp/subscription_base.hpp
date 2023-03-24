@@ -71,6 +71,10 @@ public:
   int callback_priority = 0;
 #endif
 
+#ifdef INTERNEURON
+uint32 reference_usec = 0;
+#endif
+
   /// Constructor.
   /**
    * This accepts rcl_subscription_options_t instead of rclcpp::SubscriptionOptions because

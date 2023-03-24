@@ -66,12 +66,6 @@ private:
     bool end_flag_;
     std::shared_ptr<trace::Trace> trace_callbacks_;
 
-    void dummy_task(int load) {
-        int i;
-        for (i = 0 ; i < load; i++) 
-            __asm__ volatile ("nop");
-    }
-
     void timer_callback()
     {
         std::string name = this->get_name();            
@@ -118,12 +112,6 @@ private:
     double latency;
     std::shared_ptr<trace::Trace> trace_callbacks_;
     bool end_flag_;
-
-    void dummy_task(int load) {
-        int i;
-        for (i = 0 ; i < load; i++) 
-            __asm__ volatile ("nop");
-    }
 
     void callback(const test_msgs::msg::TestString::SharedPtr msg) {
         std::string name = this->get_name();
@@ -226,5 +214,6 @@ int main(int argc, char * argv[])
     exec1.remove_node(c1_r_cb_3);    
 
     rclcpp::shutdown();
+    RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"Close successfully");
     return 0;
 }
