@@ -1,2 +1,0 @@
-UTime stamp
-string data

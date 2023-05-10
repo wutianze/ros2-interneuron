@@ -1,2 +1,0 @@
-InterneuronHeader header
-string data

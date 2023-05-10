@@ -129,26 +129,16 @@ public:
     const std::string & name, bool is_service, bool only_expand = false) const override;
 
 #ifdef INTERNEURON
-RCLCPP_PUBLIC
-bool init_sensor(const std::string & sensor_name, uint32_t remain_time)override;
+//RCLCPP_PUBLIC
+//uint32_t get_time_in_milliseconds()const override;
 
 RCLCPP_PUBLIC
-bool init_publisher(const std::string & topic_name, std::vector<std::string>& sensor_names)override;
+bool
+init_timepoint(const std::string & topic_name, std::vector<std::string>& sensor_names)override;
 
 RCLCPP_PUBLIC
-bool init_subscriber(const std::string & topic_name, std::vector<std::string>& sensor_names) override;
-
-RCLCPP_PUBLIC
-bool update_sample_time(const std::string & sensor_name, uint32_t new_time, uint32_t x) override;
-
-RCLCPP_PUBLIC
-bool update_pub_time(const std::string & topic_name, const std::string & sensor_name, uint32_t new_time, uint32_t x) override;
-
-RCLCPP_PUBLIC
-bool update_rec_time(const std::string & topic_name,const std::string & sensor_name, uint32_t new_time, uint32_t x) override;
-
-RCLCPP_PUBLIC
-bool update_callback_time(const std::string & topic_name,const std::string & sensor_name, uint32_t new_time, uint32_t x) override;
+bool
+update_timepoint(const std::string & topic_name,const std::string & sensor_name, uint32_t new_time, uint32_t x, rclcpp::MonitorTime target) override;
 #endif
 
 private:
@@ -172,9 +162,9 @@ private:
   bool notify_guard_condition_is_valid_;
 
   #ifdef INTERNEURON
-  std::mutex sensor_mtx_;
-  std::map<std::string,TimePoint> sensors_;// sensor start in this node.
-  std::mutex timepoints_mtx_;
+//rclcpp::Clock clock_;
+
+  std::mutex mtx_;
   std::map<std::string,std::map<std::string,TimePoint>>timepoints_;// topic-pub/sub-sensor_name-timepoint
   #endif
 };

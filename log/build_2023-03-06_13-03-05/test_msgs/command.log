@@ -1,2 +1,0 @@
-Invoking command in '/home/sauron/ros2-picas/build/test_msgs': /usr/bin/cmake --build /home/sauron/ros2-picas/build/test_msgs -- -j20 -l20
-Invoked command in '/home/sauron/ros2-picas/build/test_msgs' returned '2': /usr/bin/cmake --build /home/sauron/ros2-picas/build/test_msgs -- -j20 -l20

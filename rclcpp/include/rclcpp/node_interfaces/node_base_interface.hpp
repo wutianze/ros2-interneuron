@@ -32,7 +32,6 @@ namespace rclcpp
 {
 
 #ifdef INTERNEURON
-
 enum class MonitorTime{
   ReferenceTime,
   RemainTime,
@@ -44,11 +43,7 @@ enum class MonitorTime{
 class TimePoint{
 public:
 RCLCPP_PUBLIC
-explicit TimePoint(uint32_t reference_time, uint32_t remain_time,  uint32_t wait_time,uint32_t last_sample):
-reference_time_(reference_time),
-remain_time_(remain_time),
-wait_time_(wait_time),
-last_sample_(last_sample)
+explicit TimePoint():
 {}
 
 RCLCPP_PUBLIC
@@ -90,6 +85,8 @@ switch(target){
 return true;
 };
 
+
+
 private:
 
 std::mutex mtx_;
@@ -100,6 +97,7 @@ uint32_t reference_time_;
 uint32_t remain_time_;
 uint32_t wait_time_;// the usual time to wait for, 0 means no need to wait
 
+// the time of last sample, for sensor, it is the time of last sample
 uint32_t last_sample_;
 
 #ifdef INTERNEURON_DEBUG
@@ -255,39 +253,21 @@ public:
     const std::string & name, bool is_service, bool only_expand = false) const = 0;
 
 #ifdef INTERNEURON
-RCLCPP_PUBLIC
-  virtual
-  bool init_sensor(const std::string & sensor_name, uint32_t remain_time)= 0;
-  RCLCPP_PUBLIC
-  virtual
-  bool init_publisher(const std::string & topic_name, std::vector<std::string>& sensor_names)= 0;
-  RCLCPP_PUBLIC
-  virtual
-  bool init_subscriber(const std::string & topic_name, std::vector<std::string>& sensor_names)= 0;
 
-  /// sample time for a sensor
-  // sample time doesnt belong to a specific pub or sub, it is the start point of a 
-  RCLCPP_PUBLIC
-  virtual
-  bool update_sample_time(const std::string & sensor_name, uint32_t new_time, uint32_t x)= 0;
+// get current time in milliseconds
+//RCLCPP_PUBLIC
+//virtual
+//uint32_t 
+//get_time_in_milliseconds() const = 0;
 
-  /// update publish moment
-  //
   RCLCPP_PUBLIC
   virtual
-  bool update_pub_time(const std::string & topic_name,const std::string & sensor_name, uint32_t new_time, uint32_t x) = 0;
+  bool init_timepoint(const std::string & topic_name, std::vector<std::string>& sensor_names)= 0;
 
-  /// update receive moment
-  //
   RCLCPP_PUBLIC
   virtual
-  bool update_rec_time(const std::string & topic_name,const std::string & sensor_name, uint32_t new_time,uint32_t x) = 0;
+  bool update_timepoint(const std::string & topic_name,const std::string & sensor_name, uint32_t new_time, uint32_t x, rclcpp::MonitorTime target) = 0;
 
-  /// update start moment of callback
-  //
-  RCLCPP_PUBLIC
-  virtual
-  bool update_callback_time(const std::string & topic_name,const std::string & sensor_name, uint32_t new_time, uint32_t x) = 0;
 #endif
 };
 
