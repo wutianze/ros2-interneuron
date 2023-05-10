@@ -30,6 +30,87 @@
 
 namespace rclcpp
 {
+
+#ifdef INTERNEURON
+
+enum class MonitorTime{
+  ReferenceTime,
+  RemainTime,
+  WaitTime
+}
+/*
+* Struct for recording history of one time point
+*/
+class TimePoint{
+public:
+RCLCPP_PUBLIC
+explicit TimePoint(uint32_t reference_time, uint32_t remain_time,  uint32_t wait_time,uint32_t last_sample):
+reference_time_(reference_time),
+remain_time_(remain_time),
+wait_time_(wait_time),
+last_sample_(last_sample)
+{}
+
+RCLCPP_PUBLIC
+uint32_t reference_time(){
+  return this.reference_time_;
+}
+RCLCPP_PUBLIC
+uint32_t remain_time(){
+  std::lock_guard<std::mutex>lock(this.mtx_);
+  return this.remain_time_;
+}
+RCLCPP_PUBLIC
+uint32_t wait_time(){
+  std::lock_guard<std::mutex>lock(this.mtx_);
+  return this.wait_time_;
+}
+RCLCPP_PUBLIC
+uint32_t last_sample(){
+  std::lock_guard<std::mutex>lock(this.mtx_);
+  return this.last_sample_;
+}
+RCLCPP_PUBLIC
+bool update_time(uint32_t new_time, uint32_t x, MonitorTime target){
+  std::lock_guard<std::mutex>lock(this.mtx_);
+switch(target){
+  MonitorTime::ReferenceTime:{
+    this.reference_time_ = (this.reference_time_*(100-x) + new_time*x)/100;
+    break;
+  }
+  MonitorTime::RemainTime:{
+    this.remain_time_ = (this.remain_time_*(100-x) + new_time*x)/100;
+    break;
+  }
+  MonitorTime::WaitTime:{
+    this.wait_time_ = (this.wait_time_*(100-x) + new_time*x)/100;
+    break;
+  }
+}
+return true;
+};
+
+private:
+
+std::mutex mtx_;
+//history. in millisecond
+// usual time from start of the chain till now, for sensor, it is the sample time(time from last sample till now)
+uint32_t reference_time_;
+// how much free time it could use, it can be a part of the total free time, or equals to the total free time
+uint32_t remain_time_;
+uint32_t wait_time_;// the usual time to wait for, 0 means no need to wait
+
+uint32_t last_sample_;
+
+#ifdef INTERNEURON_DEBUG
+//record each update
+#endif
+//TODO: more info
+}
+
+#endif
+
+
 namespace node_interfaces
 {
 
@@ -172,6 +253,42 @@ public:
   std::string
   resolve_topic_or_service_name(
     const std::string & name, bool is_service, bool only_expand = false) const = 0;
+
+#ifdef INTERNEURON
+RCLCPP_PUBLIC
+  virtual
+  bool init_sensor(const std::string & sensor_name, uint32_t remain_time)= 0;
+  RCLCPP_PUBLIC
+  virtual
+  bool init_publisher(const std::string & topic_name, std::vector<std::string>& sensor_names)= 0;
+  RCLCPP_PUBLIC
+  virtual
+  bool init_subscriber(const std::string & topic_name, std::vector<std::string>& sensor_names)= 0;
+
+  /// sample time for a sensor
+  // sample time doesnt belong to a specific pub or sub, it is the start point of a 
+  RCLCPP_PUBLIC
+  virtual
+  bool update_sample_time(const std::string & sensor_name, uint32_t new_time, uint32_t x)= 0;
+
+  /// update publish moment
+  //
+  RCLCPP_PUBLIC
+  virtual
+  bool update_pub_time(const std::string & topic_name,const std::string & sensor_name, uint32_t new_time, uint32_t x) = 0;
+
+  /// update receive moment
+  //
+  RCLCPP_PUBLIC
+  virtual
+  bool update_rec_time(const std::string & topic_name,const std::string & sensor_name, uint32_t new_time,uint32_t x) = 0;
+
+  /// update start moment of callback
+  //
+  RCLCPP_PUBLIC
+  virtual
+  bool update_callback_time(const std::string & topic_name,const std::string & sensor_name, uint32_t new_time, uint32_t x) = 0;
+#endif
 };
 
 }  // namespace node_interfaces

@@ -281,6 +281,46 @@ NodeBase::resolve_topic_or_service_name(
     throw_from_rcl_error(ret, "failed to resolve name", rcl_get_error_state());
   }
   std::string output{output_cstr};
-  allocator.deallocate(output_cstr, allocator.state);
+  allocator.deallocate(output_scstr, allocator.state);
   return output;
 }
+
+#ifdef INTERNEURON
+bool 
+NodeMonitor::init_sensor(const std::string & sensor_name, uint32_t remain_time)
+{
+if(this.sensors.find(sensor_name)!=this.sensors.end()){
+  return false;// sensor already exists
+}else{
+this.sensors[sensor_name] = rclcpp::TimePoint(0,remain_time,0, sensor_period);
+return true;
+}
+}
+
+bool
+NodeMonitor::update_sample_time(const std::string & sensor_name, uint32_t new_time, uint32_t x)
+{
+  std::lock_guard<std::mutex>lock(this.sensor_mtx_);
+  auto it = this.sensors_.find(sensor_name);
+if(it == this.sensors_.end()){
+  return false;// sensor doesnt exist
+}
+return it.second.update_time(new_time,x,rclcpp::MonitorTime::ReferenceTime);
+}
+
+bool
+NodeMonitor::update_pub_time(const std::string & topic_name, const std::string & sensor_name, uint32_t new_time, uint32_t x)
+{
+  std::lock_guard<std::mutex>lock(this.timepoints_mtx_);
+auto it = this.timepoints_.find(topic_name);
+if(it == this.timepoints.end()){
+  return false;//topic not exist 
+}
+
+auto po = it.second.find(sensor_name);
+if(po == it.second.end()){
+  return false;//sensor not exist
+}
+return it.second.update_time(new_time,x,rclcpp::MonitorTime::ReferenceTime);
+}
+#endif
