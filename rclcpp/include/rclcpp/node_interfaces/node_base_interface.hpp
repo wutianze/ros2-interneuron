@@ -36,60 +36,52 @@ enum class MonitorTime{
   ReferenceTime,
   RemainTime,
   WaitTime
-}
+};
 /*
 * Struct for recording history of one time point
 */
 class TimePoint{
 public:
 RCLCPP_PUBLIC
-explicit TimePoint():
-{}
+explicit TimePoint(){}
 
 RCLCPP_PUBLIC
 uint32_t reference_time(){
-  return this.reference_time_;
+  return this->reference_time_;
 }
 RCLCPP_PUBLIC
 uint32_t remain_time(){
-  std::lock_guard<std::mutex>lock(this.mtx_);
-  return this.remain_time_;
+  return this->remain_time_;
 }
 RCLCPP_PUBLIC
 uint32_t wait_time(){
-  std::lock_guard<std::mutex>lock(this.mtx_);
-  return this.wait_time_;
+  return this->wait_time_;
 }
 RCLCPP_PUBLIC
 uint32_t last_sample(){
-  std::lock_guard<std::mutex>lock(this.mtx_);
-  return this.last_sample_;
+  return this->last_sample_;
 }
 RCLCPP_PUBLIC
 bool update_time(uint32_t new_time, uint32_t x, MonitorTime target){
-  std::lock_guard<std::mutex>lock(this.mtx_);
 switch(target){
-  MonitorTime::ReferenceTime:{
-    this.reference_time_ = (this.reference_time_*(100-x) + new_time*x)/100;
+  case MonitorTime::ReferenceTime:{
+    this->reference_time_ = (this->reference_time_*(100-x) + new_time*x)/100;
     break;
   }
-  MonitorTime::RemainTime:{
-    this.remain_time_ = (this.remain_time_*(100-x) + new_time*x)/100;
+  case MonitorTime::RemainTime:{
+    this->remain_time_ = (this->remain_time_*(100-x) + new_time*x)/100;
     break;
   }
-  MonitorTime::WaitTime:{
-    this.wait_time_ = (this.wait_time_*(100-x) + new_time*x)/100;
+  case MonitorTime::WaitTime:{
+    this->wait_time_ = (this->wait_time_*(100-x) + new_time*x)/100;
     break;
   }
 }
 return true;
 };
 
-
-
 private:
 
-std::mutex mtx_;
 //history. in millisecond
 // usual time from start of the chain till now, for sensor, it is the sample time(time from last sample till now)
 uint32_t reference_time_;
@@ -104,7 +96,7 @@ uint32_t last_sample_;
 //record each update
 #endif
 //TODO: more info
-}
+};
 
 #endif
 

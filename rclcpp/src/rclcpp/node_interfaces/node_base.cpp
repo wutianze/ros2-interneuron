@@ -46,9 +46,6 @@ NodeBase::NodeBase(
   associated_with_executor_(false),
   notify_guard_condition_(context),
   notify_guard_condition_is_valid_(false)
-#ifdef INTERNEURON
-,clock_(RCL_SYSTEM_TIME)
-#endif
 {
   // Create the rcl node and store it in a shared_ptr with a custom destructor.
   std::unique_ptr<rcl_node_t> rcl_node(new rcl_node_t(rcl_get_zero_initialized_node()));
@@ -284,28 +281,32 @@ NodeBase::resolve_topic_or_service_name(
     throw_from_rcl_error(ret, "failed to resolve name", rcl_get_error_state());
   }
   std::string output{output_cstr};
-  allocator.deallocate(output_scstr, allocator.state);
+  allocator.deallocate(output_cstr, allocator.state);
   return output;
 }
 
 #ifdef INTERNEURON
 //uint32_t
 //get_time_in_milliseconds()const{
-//rclcpp::Time now = this.clock_.now();
+//rclcpp::Time now = this->clock_.now();
 //return static_cast<uint32_t>(now.nanoseconds()/1e6);
 //}
 
 bool
 NodeBase::init_timepoint(const std::string & topic_name, std::vector<std::string>& sensor_names){
-  std::lock_guard<std::mutex>lock(this.mtx_);
-  if((auto it = this.timepoint_.find(topic_name)) == this.timepoints_.end()){
+  std::lock_guard<std::mutex>lock(this->mtx_);
+  if(auto it = this->timepoints_.find(topic_name); it == this->timepoints_.end()){
     for(const std::string&sensor_name : sensor_names){
-      this.timepoints_[topic_name][sensor_name] = rclcpp::TimePoint();
+      this->timepoints_[topic_name][sensor_name] = rclcpp::TimePoint();
     }
-  }else if(it->second.find(sensor_name) == it->second.end()){
-    it->second[sensor_name] = rclcpp::TimePoint();
   }else{
-    throw std::runtime_error("timepoint already exist");
+    for(const std::string&sensor_name: sensor_names){
+      if(it->second.find(sensor_name) == it->second.end()){
+        it->second[sensor_name] = rclcpp::TimePoint();
+      }else{
+        throw std::runtime_error("sensor for this topic already exist");
+      }
+    }
   }
   return true;
 }
@@ -313,9 +314,9 @@ NodeBase::init_timepoint(const std::string & topic_name, std::vector<std::string
 bool
 NodeBase::update_timepoint(const std::string & topic_name, const std::string & sensor_name, uint32_t new_time, uint32_t x, rclcpp::MonitorTime target)
 {
-  std::lock_guard<std::mutex>lock(this.mtx_);
-if((auto it = this.timepoints_.find(topic_name)) != this.timepoints.end()){
-  if(auto po = it->second.find(sensor_name) != it->second.end()){
+  std::lock_guard<std::mutex>lock(this->mtx_);
+if(auto it = this->timepoints_.find(topic_name); it != this->timepoints_.end()){
+  if(auto po = it->second.find(sensor_name); po != it->second.end()){
     return po->second.update_time(new_time,x,target);
   }else{
     throw std::runtime_error("sensor for this topic not exist");

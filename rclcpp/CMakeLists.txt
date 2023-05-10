@@ -39,6 +39,11 @@ if(${PICAS})
   add_compile_options(-DPICAS)
 endif()
 
+# INTERNEURON feature
+if(${INTERNEURON})
+  add_compile_options(-DINTERNEURON)
+endif()
+
 set(${PROJECT_NAME}_SRCS
   src/rclcpp/any_executable.cpp
   src/rclcpp/callback_group.cpp
