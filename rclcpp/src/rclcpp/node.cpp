@@ -613,7 +613,7 @@ Node::init_timepoint(const std::string & topic_name, std::vector<std::string>& s
 }
 
 bool
-Node::update_timepoint(const std::string & topic_name,const std::string & sensor_name, int64_t new_time, uint8_t x, rclcpp::MonitorTime target){
+Node::update_timepoint(const std::string & topic_name,const std::string & sensor_name, uint64_t new_time, uint8_t x, rclcpp::MonitorTime target){
   return this->node_base_->update_timepoint(topic_name, sensor_name, new_time, x, target);
 }
  

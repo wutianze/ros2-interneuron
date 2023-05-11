@@ -312,7 +312,7 @@ NodeBase::init_timepoint(const std::string & topic_name, std::vector<std::string
 }
 
 bool
-NodeBase::update_timepoint(const std::string & topic_name, const std::string & sensor_name, int64_t new_time, uint8_t x, rclcpp::MonitorTime target)
+NodeBase::update_timepoint(const std::string & topic_name, const std::string & sensor_name, uint64_t new_time, uint8_t x, rclcpp::MonitorTime target)
 {
   std::lock_guard<std::mutex>lock(this->mtx_);
 if(auto it = this->timepoints_.find(topic_name); it != this->timepoints_.end()){

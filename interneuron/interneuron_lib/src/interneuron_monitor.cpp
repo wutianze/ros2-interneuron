@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: Sauron
  * @Date: 2023-05-10 17:26:18
- * @LastEditTime: 2023-05-11 11:02:17
+ * @LastEditTime: 2023-05-11 14:21:02
  * @LastEditors: Sauron
  */
 #include "interneuron_monitor.h"
@@ -16,7 +16,7 @@ namespace interneuron{
 		}
 		return true;
 	}
-	int64_t start_time(interneuron_msgs::msg::InterneuronHeader& header){
+	uint64_t start_time(interneuron_msgs::msg::InterneuronHeader& header){
 		std::cout << "start_time" <<header.time_pieces[0].start_time << std::endl;
 		return header.time_pieces[0].start_time;
 	}
