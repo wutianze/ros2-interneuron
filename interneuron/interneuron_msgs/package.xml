@@ -1,11 +1,13 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>interneuron_interfaces</name>
+  <name>interneuron_msgs</name>
   <version>1.0.0</version>
-  <description>A package containing some messages for Interneuron examples.</description>
-  <maintainer email="1369130123qq@gmail.com">sauron</maintainer>
-  <license>TODO: License declaration</license>
+  <description>A package containing some interneuron message definitions.</description>
+
+  <maintainer email="1369130123qq@gmail.com">Sauron</maintainer>
+
+  <license>Apache License 2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 

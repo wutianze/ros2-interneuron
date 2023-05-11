@@ -46,23 +46,23 @@ RCLCPP_PUBLIC
 explicit TimePoint(){}
 
 RCLCPP_PUBLIC
-uint32_t reference_time(){
+int64_t reference_time(){
   return this->reference_time_;
 }
 RCLCPP_PUBLIC
-uint32_t remain_time(){
+int64_t remain_time(){
   return this->remain_time_;
 }
 RCLCPP_PUBLIC
-uint32_t wait_time(){
+int64_t wait_time(){
   return this->wait_time_;
 }
 RCLCPP_PUBLIC
-uint32_t last_sample(){
+int64_t last_sample(){
   return this->last_sample_;
 }
 RCLCPP_PUBLIC
-bool update_time(uint32_t new_time, uint32_t x, MonitorTime target){
+bool update_time(int64_t new_time, uint8_t x, MonitorTime target){
 switch(target){
   case MonitorTime::ReferenceTime:{
     this->reference_time_ = (this->reference_time_*(100-x) + new_time*x)/100;
@@ -84,13 +84,13 @@ private:
 
 //history. in millisecond
 // usual time from start of the chain till now, for sensor, it is the sample time(time from last sample till now)
-uint32_t reference_time_;
+int64_t reference_time_;
 // how much free time it could use, it can be a part of the total free time, or equals to the total free time
-uint32_t remain_time_;
-uint32_t wait_time_;// the usual time to wait for, 0 means no need to wait
+int64_t remain_time_;
+int64_t wait_time_;// the usual time to wait for, 0 means no need to wait
 
 // the time of last sample, for sensor, it is the time of last sample
-uint32_t last_sample_;
+int64_t last_sample_;
 
 #ifdef INTERNEURON_DEBUG
 //record each update
@@ -258,7 +258,7 @@ public:
 
   RCLCPP_PUBLIC
   virtual
-  bool update_timepoint(const std::string & topic_name,const std::string & sensor_name, uint32_t new_time, uint32_t x, rclcpp::MonitorTime target) = 0;
+  bool update_timepoint(const std::string & topic_name,const std::string & sensor_name, int64_t new_time, uint8_t x, rclcpp::MonitorTime target) = 0;
 
 #endif
 };

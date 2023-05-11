@@ -138,7 +138,7 @@ init_timepoint(const std::string & topic_name, std::vector<std::string>& sensor_
 
 RCLCPP_PUBLIC
 bool
-update_timepoint(const std::string & topic_name,const std::string & sensor_name, uint32_t new_time, uint32_t x, rclcpp::MonitorTime target) override;
+update_timepoint(const std::string & topic_name,const std::string & sensor_name, int64_t new_time, uint8_t x, rclcpp::MonitorTime target) override;
 #endif
 
 private:
