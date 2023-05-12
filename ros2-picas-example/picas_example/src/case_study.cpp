@@ -18,6 +18,10 @@
 #include "test_msgs/msg/test_string.hpp"
 //#include "test_msgs/msg/detail/test_string__struct.hpp"
 
+#ifdef INTERNEURON
+#include "interneuron_lib/interneuron_monitor.hpp"
+#endif
+
 using std::placeholders::_1;
 //std::mutex mtx;
 

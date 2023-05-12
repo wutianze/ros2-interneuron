@@ -82,7 +82,7 @@ return true;
 
 private:
 
-//history. in millisecond
+//history. in nanoseconds
 // usual time from start of the chain till now, for sensor, it is the sample time(time from last sample till now)
 uint64_t reference_time_;
 // how much free time it could use, it can be a part of the total free time, or equals to the total free time

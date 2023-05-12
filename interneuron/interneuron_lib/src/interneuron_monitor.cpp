@@ -2,10 +2,10 @@
  * @Description: 
  * @Author: Sauron
  * @Date: 2023-05-10 17:26:18
- * @LastEditTime: 2023-05-11 14:21:02
+ * @LastEditTime: 2023-05-11 23:18:31
  * @LastEditors: Sauron
  */
-#include "interneuron_monitor.h"
+#include "interneuron_lib/interneuron_monitor.hpp"
 #include <iostream>
 
 namespace interneuron{

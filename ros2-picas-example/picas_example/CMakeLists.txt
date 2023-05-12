@@ -14,16 +14,22 @@ if(${PICAS})
   add_compile_options(-DPICAS)
 endif()
 
+if(${INTERNEURON})
+  add_compile_options(-DINTERNEURON)
+endif()
+
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(test_msgs REQUIRED)
 find_package(trace_picas REQUIRED)
+find_package(interneuron_lib REQUIRED)
+find_package(interneuron_msgs REQUIRED)
 
 add_executable(example src/example.cpp)
 add_executable(case_study src/case_study.cpp)
-ament_target_dependencies(example rclcpp test_msgs trace_picas)
-ament_target_dependencies(case_study rclcpp test_msgs trace_picas)
+ament_target_dependencies(example rclcpp test_msgs trace_picas interneuron_msgs interneuron_lib)
+ament_target_dependencies(case_study rclcpp test_msgs trace_picas interneuron_msgs interneuron_lib)
 
 install(TARGETS
   example
